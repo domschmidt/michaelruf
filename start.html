@@ -36,13 +36,13 @@
 		</div>
 	</div>
 
-<!-- News -->
+	<!-- News -->
 
 
 
-<!-- Fahrpläne -->
+	<!-- Fahrpläne -->
 
-	<div class="row">
+	<div class="row margin-bottom-36">
 		<div class="columns large-12">
 			<div id="content" data-ng-app="michaelruf">
 				<div id="busroutes" data-ng-controller="BusRoutesCtl"
@@ -63,41 +63,42 @@
 
 						<div class="columns large-4">
 
-							<div data-ng-show="selected.route">
-								<label for="busStopSelection">Haltestation:</label> <select
-									id="busStopSelection" data-ng-model="selected.busStop">
-									<option value="qp">Quierschied Post</option>
-									<option value="qam">Quierschied alter Markt</option>
-								</select>
-							</div>
+							<label for="busStopSelection">Haltestation:</label> <select
+								data-ng-disabled="!selected.route" id="busStopSelection"
+								data-ng-model="selected.busStop">
+								<option value="qp">Quierschied Post</option>
+								<option value="qam">Quierschied alter Markt</option>
+							</select>
 
 						</div>
 
 						<div class="columns large-4">
 
-							<div data-ng-show="selected.route && selected.busStop">
-								<label for="daySelection">Wochentag:</label> <select
-									id="daySelection" data-ng-model="selected.day">
-									<option value="mo">Montag</option>
-									<option value="di">Dienstag</option>
-									<option value="mi">Mittwoch</option>
-									<option value="do">Donnerstag</option>
-									<option value="fr">Freitag</option>
-									<option value="sa">Samstag</option>
-									<option value="so">Sonntag</option>
-								</select>
-							</div>
+							<label for="daySelection">Wochentag:</label> <select
+								data-ng-disabled="!selected.route || !selected.busStop"
+								id="daySelection" data-ng-model="selected.day">
+								<option value="mo">Montag</option>
+								<option value="di">Dienstag</option>
+								<option value="mi">Mittwoch</option>
+								<option value="do">Donnerstag</option>
+								<option value="fr">Freitag</option>
+								<option value="sa">Samstag</option>
+								<option value="so">Sonntag</option>
+							</select>
 
 						</div>
 					</div>
-					<div class="row"
-						data-ng-show="selected.route && selected.busStop && selected.day"
-						class="trip-wrapper">
+					<div class="row" class="trip-wrapper">
 						<div class="columns large-12">
 
-							<h2>Fahrzeiten:</h2>
-							<span>3 Fahrten</span>
-							<ul class="accordion trip-list" data-accordion role="tablist">
+							<h3>Fahrzeiten:</h3>
+							<span
+								data-ng-show="selected.route && selected.busStop && selected.day">3
+								Fahrten</span> <span
+								data-ng-show="!selected.route || !selected.busStop || !selected.day">Bitte
+								wählen Sie zunächst ihre Routeninformationen aus.</span>
+							<ul class="accordion trip-list" data-accordion role="tablist"
+								data-ng-show="selected.route && selected.busStop && selected.day">
 								<li class="accordion-navigation"><a href="#panel1a"
 									role="tab">Abfahrt: 14:30, Ankunft: 14:55<span
 										class="icon-accordion right"></span></a>
@@ -143,6 +144,102 @@
 			</div>
 		</div>
 	</div>
+
+	<div class="row margin-bottom-36">
+		<div class="columns large-24">
+			<h2>Impressum</h2>
+			<font size="2">Angaben gemäß § 5 TMG:<br> <br> <b>Junge
+					Union Saar</b><br>Stengelstraße 5<br>66117 Saarbrücken<br>
+				<br>
+				<table border="0" cellspacing="0" cellpadding="0"
+					style="width: 100%;">
+					<tbody>
+						<tr>
+							<td width="10%">Telefon</td>
+							<td width="5%">&nbsp;:&nbsp;</td>
+							<td>+49 681 5845392</td>
+						</tr>
+						<tr>
+							<td width="10%">Fax</td>
+							<td width="5%">&nbsp;:&nbsp;</td>
+							<td>+49 681 585052</td>
+						</tr>
+					</tbody>
+				</table> <br>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV: <a
+				href="index.php?ka=1&amp;ska=profil&amp;pid=2">Alexander Zeyer</a>.
+				<br> <br>
+				<table border="0" cellspacing="0" cellpadding="0">
+					<tbody>
+						<tr>
+							<td width="10%">Webmaster</td>
+							<td width="5%">&nbsp;:&nbsp;</td>
+							<td><a href="index.php?ka=1&amp;ska=profil&amp;pid=11">Oliver
+									Kuhn</a></td>
+						</tr>
+					</tbody>
+				</table> <br>Bei dem Inhalt unserer Internetseiten handelt es sich um
+				urheberrechtlich geschützte Werke. Wir gestatten die Übernahme von
+				Texten in Datenbestände, die ausschließlich für den privaten
+				Gebrauch eines Nutzers bestimmt sind. Die Übernahme und Nutzung der
+				Daten zu anderen Zwecken bedarf der schriftlichen Zustimmung. <br>
+				<br> <b>Haftungshinweis:</b><br> Im Rahmen unseres
+				Dienstes werden auch Links zu Internetinhalten anderer Anbieter
+				bereitgestellt. Auf den Inhalt dieser Seiten haben wir keinen
+				Einfluss; für den Inhalt ist ausschließlich der Betreiber der
+				anderen Website verantwortlich. Trotz der Überprüfung der Inhalte im
+				gesetzlich gebotenen Rahmen müssen wir daher jede Verantwortung für
+				den Inhalt dieser Links bzw. der verlinkten Seite ablehnen. <br>
+				<br> <b>Datenschutzerklärung für die Nutzung von
+					Social-Plugins</b><br> Auf unseren Internetseiten sind Plugins von
+				sozialen Netzwerken eingebunden. Die Plugins erkennen Sie an den
+				entsprechenden Logos (Facebook, Google+, Twitter usw.).<br> <br>Wenn
+				Sie mit den Plugins interagieren, baut Ihr Browser eine direkte
+				Verbindung mit den Servern der sozialen Netzwerke auf. Die Sozialen
+				Netzwerke erhalten dadurch die Information, dass Sie mit Ihrer
+				IP-Adresse unsere Seite besucht haben. Wenn Sie bei den Sozialen
+				Netzwerken eingeloggt sind, können diese den Besuch Ihrem jeweiligen
+				Nutzer-Konto zuordnen.<br> <br>Da diese Übertragung direkt
+				verläuft, erhalten wir keine Kenntnis von den übermittelten Daten.
+				Informationen zu Zweck und Umfang der Datenerhebung durch die
+				Sozialen Netzwerke, die weitere Verarbeitung und Nutzung der Daten
+				durch die Sozialen Netzwerke sowie Ihre diesbezüglichen Rechte und
+				Einstellungsmöglichkeiten zum Schutz Ihrer Privatsphäre entnehmen
+				Sie bitte den Datenschutzhinweisen des jeweiligen Sozialen
+				Netzwerks.
+			</font>
+		</div>
+	</div>
+	</div>
+
+	<div class="row margin-bottom-36">
+		<div class="columns large-24">
+			<h2>Lizenzen</h2>
+			<div>
+				<a href="resources/js/angular/license.txt" target="_blank">Angular
+					JS 1.4.2</a>
+			</div>
+			<div>
+				<a href="resources/js/foundation/license.txt" target="_blank">Foundation
+					5.5.2</a>
+			</div>
+			<div>
+				<a href="resources/js/vendor/fastclick-license.txt" target="_blank">Fastclick</a>
+			</div>
+			<div>
+				<a href="resources/js/vendor/jquery-license.txt" target="_blank">Jquery</a>
+			</div>
+			<div>
+				<a href="resources/js/vendor/modernizr-license.txt" target="_blank">Modernizr</a>
+			</div>
+			<div>
+				<a href="resources/js/vendor/placeholder-license.txt"
+					target="_blank">Placeholder</a>
+			</div>
+		</div>
+
+
+	</div>
+
 	<script type="text/javascript">
 		$(document).foundation({
 			accordion : {}

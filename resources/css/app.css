@@ -5,6 +5,9 @@ Utility classes
 .margin-bottom-36 {
 	margin-bottom: 36px !important;
 }
+.remove-border {
+	border: none;
+}
 
 
 /**
