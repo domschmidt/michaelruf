@@ -32,7 +32,28 @@
 		<div class="columns large-12">
 			<img src="resources/images/toplogo.png" alt="">
 			<h1 class="decorative-headline">Junge Union Portal</h1>
+		</div>
+	</div>
 
+	<!-- Menu -->
+
+	<div class="menu-wrapper margin-bottom-36">
+		<div class="row">
+			<div class="columns large-24">
+				<dl class="sub-nav">
+					<div class="row">
+						<div class="columns medium-4">
+							<a href="#routeplan" class="menu-item">Fahrplan</a>
+						</div>
+						<div class="columns medium-4">
+							<a href="#imprint" class="menu-item">Impressum</a>
+						</div>
+						<div class="columns medium-4">
+							<a href="#licenses" class="menu-item">Lizenzen</a>
+						</div>
+					</div>
+				</dl>
+			</div>
 		</div>
 	</div>
 
@@ -42,9 +63,9 @@
 
 	<!-- Fahrpläne -->
 
-	<div class="row margin-bottom-36">
+	<div class="row margin-bottom-36" id="routeplan">
 		<div class="columns large-12">
-			<div id="content" data-ng-app="michaelruf">
+			<div id="content" data-ng-app="michaelruf" data-ng-cloak>
 				<div id="busroutes" data-ng-controller="BusRoutesCtl"
 					class="bus-routes-wrapper">
 
@@ -94,9 +115,9 @@
 							<h3>Fahrzeiten:</h3>
 							<span
 								data-ng-show="selected.route && selected.busStop && selected.day">3
-								Fahrten</span> <span
+								Fahrten</span> <label for="{{!selected.route ? 'routeSelection' : !selected.busStop ? 'busStopSelection' : 'daySelection' }}"
 								data-ng-show="!selected.route || !selected.busStop || !selected.day">Bitte
-								wählen Sie zunächst ihre Routeninformationen aus.</span>
+								wählen Sie zunächst ihre Routeninformationen aus.</label>
 							<ul class="accordion trip-list" data-accordion role="tablist"
 								data-ng-show="selected.route && selected.busStop && selected.day">
 								<li class="accordion-navigation"><a href="#panel1a"
@@ -104,36 +125,36 @@
 										class="icon-accordion right"></span></a>
 									<div id="panel1a" class="content" role="tabpanel">
 										<div class="row">
-											<div class="columns small-8">Quierschied Post</div>
-											<div class="columns small-4 text-right">14:30</div>
+											<div class="columns small-9">Quierschied Post</div>
+											<div class="columns small-3 text-right">14:30</div>
 										</div>
 										<div class="row">
-											<div class="columns small-8">Quierschied alter Markt</div>
-											<div class="columns small-4 text-right">14:32</div>
+											<div class="columns small-9">Quierschied alter Markt</div>
+											<div class="columns small-3 text-right">14:32</div>
 										</div>
 									</div></li>
 								<li class="accordion-navigation"><a href="#panel2a"
 									role="tab">15:30<span class="icon-accordion right"></span></a>
 									<div id="panel2a" class="content" role="tabpanel">
 										<div class="row">
-											<div class="columns small-8">Quierschied Post</div>
-											<div class="columns small-4 text-right">15:30</div>
+											<div class="columns small-9">Quierschied Post</div>
+											<div class="columns small-3 text-right">15:30</div>
 										</div>
 										<div class="row">
-											<div class="columns small-8">Quierschied alter Markt</div>
-											<div class="columns small-4 text-right">15:32</div>
+											<div class="columns small-9">Quierschied alter Markt</div>
+											<div class="columns small-3 text-right">15:32</div>
 										</div>
 									</div></li>
 								<li class="accordion-navigation"><a href="#panel3a"
 									role="tab">16:30<span class="icon-accordion right"></span></a>
 									<div id="panel3a" class="content" role="tabpanel">
 										<div class="row">
-											<div class="columns small-8">Quierschied Post</div>
-											<div class="columns small-4 text-right">16:30</div>
+											<div class="columns small-9">Quierschied Post</div>
+											<div class="columns small-3 text-right">16:30</div>
 										</div>
 										<div class="row">
-											<div class="columns small-8">Quierschied alter Markt</div>
-											<div class="columns small-4 text-right">16:32</div>
+											<div class="columns small-9">Quierschied alter Markt</div>
+											<div class="columns small-3 text-right">16:32</div>
 										</div>
 									</div></li>
 							</ul>
@@ -145,73 +166,54 @@
 		</div>
 	</div>
 
-	<div class="row margin-bottom-36">
-		<div class="columns large-24">
-			<h2>Impressum</h2>
-			<font size="2">Angaben gemäß § 5 TMG:<br> <br> <b>Junge
-					Union Saar</b><br>Stengelstraße 5<br>66117 Saarbrücken<br>
-				<br>
-				<table border="0" cellspacing="0" cellpadding="0"
-					style="width: 100%;">
-					<tbody>
-						<tr>
-							<td width="10%">Telefon</td>
-							<td width="5%">&nbsp;:&nbsp;</td>
-							<td>+49 681 5845392</td>
-						</tr>
-						<tr>
-							<td width="10%">Fax</td>
-							<td width="5%">&nbsp;:&nbsp;</td>
-							<td>+49 681 585052</td>
-						</tr>
-					</tbody>
-				</table> <br>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV: <a
-				href="index.php?ka=1&amp;ska=profil&amp;pid=2">Alexander Zeyer</a>.
-				<br> <br>
-				<table border="0" cellspacing="0" cellpadding="0">
-					<tbody>
-						<tr>
-							<td width="10%">Webmaster</td>
-							<td width="5%">&nbsp;:&nbsp;</td>
-							<td><a href="index.php?ka=1&amp;ska=profil&amp;pid=11">Oliver
-									Kuhn</a></td>
-						</tr>
-					</tbody>
-				</table> <br>Bei dem Inhalt unserer Internetseiten handelt es sich um
-				urheberrechtlich geschützte Werke. Wir gestatten die Übernahme von
-				Texten in Datenbestände, die ausschließlich für den privaten
-				Gebrauch eines Nutzers bestimmt sind. Die Übernahme und Nutzung der
-				Daten zu anderen Zwecken bedarf der schriftlichen Zustimmung. <br>
-				<br> <b>Haftungshinweis:</b><br> Im Rahmen unseres
-				Dienstes werden auch Links zu Internetinhalten anderer Anbieter
-				bereitgestellt. Auf den Inhalt dieser Seiten haben wir keinen
-				Einfluss; für den Inhalt ist ausschließlich der Betreiber der
-				anderen Website verantwortlich. Trotz der Überprüfung der Inhalte im
-				gesetzlich gebotenen Rahmen müssen wir daher jede Verantwortung für
-				den Inhalt dieser Links bzw. der verlinkten Seite ablehnen. <br>
-				<br> <b>Datenschutzerklärung für die Nutzung von
-					Social-Plugins</b><br> Auf unseren Internetseiten sind Plugins von
-				sozialen Netzwerken eingebunden. Die Plugins erkennen Sie an den
-				entsprechenden Logos (Facebook, Google+, Twitter usw.).<br> <br>Wenn
-				Sie mit den Plugins interagieren, baut Ihr Browser eine direkte
-				Verbindung mit den Servern der sozialen Netzwerke auf. Die Sozialen
-				Netzwerke erhalten dadurch die Information, dass Sie mit Ihrer
-				IP-Adresse unsere Seite besucht haben. Wenn Sie bei den Sozialen
-				Netzwerken eingeloggt sind, können diese den Besuch Ihrem jeweiligen
-				Nutzer-Konto zuordnen.<br> <br>Da diese Übertragung direkt
-				verläuft, erhalten wir keine Kenntnis von den übermittelten Daten.
-				Informationen zu Zweck und Umfang der Datenerhebung durch die
-				Sozialen Netzwerke, die weitere Verarbeitung und Nutzung der Daten
-				durch die Sozialen Netzwerke sowie Ihre diesbezüglichen Rechte und
-				Einstellungsmöglichkeiten zum Schutz Ihrer Privatsphäre entnehmen
-				Sie bitte den Datenschutzhinweisen des jeweiligen Sozialen
-				Netzwerks.
-			</font>
+	<div
+		class="impressum-wrapper padding-top-36 padding-bottom-36 highlight-links"
+		id="imprint">
+		<div class="row">
+			<div class="columns large-24">
+				<h2>Impressum</h2>
+				<font size="2">Angaben gemäß § 5 TMG:<br> <br> <b>Junge
+						Union Saar</b><br>Stengelstraße 5<br>66117 Saarbrücken<br>
+					<br>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV: <a
+					href="index.php?ka=1&amp;ska=profil&amp;pid=2">Alexander Zeyer</a>.
+					<br> <br>Bei dem Inhalt unserer Internetseiten handelt es
+					sich um urheberrechtlich geschützte Werke. Wir gestatten die
+					Übernahme von Texten in Datenbestände, die ausschließlich für den
+					privaten Gebrauch eines Nutzers bestimmt sind. Die Übernahme und
+					Nutzung der Daten zu anderen Zwecken bedarf der schriftlichen
+					Zustimmung. <br> <br> <b>Haftungshinweis:</b><br> Im
+					Rahmen unseres Dienstes werden auch Links zu Internetinhalten
+					anderer Anbieter bereitgestellt. Auf den Inhalt dieser Seiten haben
+					wir keinen Einfluss; für den Inhalt ist ausschließlich der
+					Betreiber der anderen Website verantwortlich. Trotz der Überprüfung
+					der Inhalte im gesetzlich gebotenen Rahmen müssen wir daher jede
+					Verantwortung für den Inhalt dieser Links bzw. der verlinkten Seite
+					ablehnen. <br> <br> <b>Datenschutzerklärung für die
+						Nutzung von Social-Plugins</b><br> Auf unseren Internetseiten
+					sind Plugins von sozialen Netzwerken eingebunden. Die Plugins
+					erkennen Sie an den entsprechenden Logos (Facebook, Google+,
+					Twitter usw.).<br> <br>Wenn Sie mit den Plugins
+					interagieren, baut Ihr Browser eine direkte Verbindung mit den
+					Servern der sozialen Netzwerke auf. Die Sozialen Netzwerke erhalten
+					dadurch die Information, dass Sie mit Ihrer IP-Adresse unsere Seite
+					besucht haben. Wenn Sie bei den Sozialen Netzwerken eingeloggt
+					sind, können diese den Besuch Ihrem jeweiligen Nutzer-Konto
+					zuordnen.<br> <br>Da diese Übertragung direkt verläuft,
+					erhalten wir keine Kenntnis von den übermittelten Daten.
+					Informationen zu Zweck und Umfang der Datenerhebung durch die
+					Sozialen Netzwerke, die weitere Verarbeitung und Nutzung der Daten
+					durch die Sozialen Netzwerke sowie Ihre diesbezüglichen Rechte und
+					Einstellungsmöglichkeiten zum Schutz Ihrer Privatsphäre entnehmen
+					Sie bitte den Datenschutzhinweisen des jeweiligen Sozialen
+					Netzwerks.
+				</font>
+			</div>
 		</div>
 	</div>
-	</div>
 
-	<div class="row margin-bottom-36">
+	<div
+		class="row margin-bottom-36 margin-top-36 highlight-links licenses-wrapper links-in-primary-colour"
+		id="licenses">
 		<div class="columns large-24">
 			<h2>Lizenzen</h2>
 			<div>
@@ -242,7 +244,8 @@
 
 	<script type="text/javascript">
 		$(document).foundation({
-			accordion : {}
+			accordion : {},
+			magellan : {}
 		});
 	</script>
 </body>

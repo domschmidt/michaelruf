@@ -1,3 +1,17 @@
+
+/**
+General Styles
+**/
+
+h1,h2,h3,h4,h5 {
+	margin-top: 0px;
+}
+
+select:disabled {
+	border: 0;
+}
+
+
 /**
 Utility classes
 **/
@@ -5,10 +19,95 @@ Utility classes
 .margin-bottom-36 {
 	margin-bottom: 36px !important;
 }
+
+.margin-top-36 {
+	margin-top: 36px !important;
+}
+
+.padding-top-36 {
+	padding-top: 36px !important;
+}
+
+.padding-bottom-36 {
+	padding-bottom: 36px !important;
+}
+
 .remove-border {
 	border: none;
 }
 
+.links-in-primary-colour a {
+ 	color: #003572;
+}
+
+.highlight-links a{
+	text-decoration: underline;
+}
+.highlight-links a:hover {
+	text-decoration: none;
+}
+
+/**
+impressum Wrapper
+**/
+.impressum-wrapper {
+ 	background-color: #003572;
+ 	color: white !important;
+}
+.impressum-wrapper a,
+.impressum-wrapper h1,
+.impressum-wrapper h2,
+.impressum-wrapper h3,
+.impressum-wrapper h4,
+.impressum-wrapper h5 {
+ 	color: white !important;
+}
+
+/**
+trip list
+**/
+.trip-list {
+	margin-left: 0;
+}
+
+/**
+Menu wrapper
+**/
+.menu-wrapper {
+ 	background-color: #003572;
+ 	color: white !important;
+}
+.menu-wrapper .icon-bar {	
+ 	background-color: #003572;
+ 	color: white !important;
+}
+.menu-wrapper a {
+ 	color: white !important;
+}
+
+.menu-wrapper .sub-nav {
+	margin: 18px 0;
+}
+
+.menu-wrapper .sub-nav a:hover {
+	text-decoration: underline;
+}
+
+.menu-wrapper .sub-nav a {
+	text-decoration: none;
+}
+
+.menu-wrapper .sub-nav dd:first-of-type {
+    margin-left: 0;
+}
+
+.sub-nav dd:first-of-type a {
+    padding-left: 0;
+}
+
+.menu-wrapper .menu-item {
+	line-height: 36px;
+}
 
 /**
 classes relevant for html5 outlines
