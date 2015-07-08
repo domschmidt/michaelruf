@@ -1,0 +1,15 @@
+/**
+Utility classes
+**/
+
+.margin-bottom-36 {
+	margin-bottom: 36px !important;
+}
+
+
+/**
+classes relevant for html5 outlines
+**/
+.decorative-headline {
+	display: none;
+}
