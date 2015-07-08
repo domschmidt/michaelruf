@@ -115,46 +115,46 @@
 							<h3>Fahrzeiten:</h3>
 							<span
 								data-ng-show="selected.route && selected.busStop && selected.day">3
-								Fahrten</span> <label for="{{!selected.route ? 'routeSelection' : !selected.busStop ? 'busStopSelection' : 'daySelection' }}"
+								Fahrten</span> <label
+								for="{{!selected.route ? 'routeSelection' : !selected.busStop ? 'busStopSelection' : 'daySelection' }}"
 								data-ng-show="!selected.route || !selected.busStop || !selected.day">Bitte
 								wählen Sie zunächst ihre Routeninformationen aus.</label>
 							<ul class="accordion trip-list" data-accordion role="tablist"
 								data-ng-show="selected.route && selected.busStop && selected.day">
 								<li class="accordion-navigation"><a href="#panel1a"
-									role="tab">Abfahrt: 14:30, Ankunft: 14:55<span
-										class="icon-accordion right"></span></a>
+									role="tab">14:30 Uhr<span class="icon-accordion right"></span></a>
 									<div id="panel1a" class="content" role="tabpanel">
 										<div class="row">
-											<div class="columns small-9">Quierschied Post</div>
-											<div class="columns small-3 text-right">14:30</div>
+											<div class="columns small-8">Quierschied Post</div>
+											<div class="columns small-4 text-right">14:30 Uhr</div>
 										</div>
 										<div class="row">
-											<div class="columns small-9">Quierschied alter Markt</div>
-											<div class="columns small-3 text-right">14:32</div>
+											<div class="columns small-8">Quierschied alter Markt</div>
+											<div class="columns small-4 text-right">14:32 Uhr</div>
 										</div>
 									</div></li>
 								<li class="accordion-navigation"><a href="#panel2a"
-									role="tab">15:30<span class="icon-accordion right"></span></a>
+									role="tab">15:30 Uhr<span class="icon-accordion right"></span></a>
 									<div id="panel2a" class="content" role="tabpanel">
 										<div class="row">
-											<div class="columns small-9">Quierschied Post</div>
-											<div class="columns small-3 text-right">15:30</div>
+											<div class="columns small-8">Quierschied Post</div>
+											<div class="columns small-3 text-right">15:30 Uhr</div>
 										</div>
 										<div class="row">
-											<div class="columns small-9">Quierschied alter Markt</div>
-											<div class="columns small-3 text-right">15:32</div>
+											<div class="columns small-8">Quierschied alter Markt</div>
+											<div class="columns small-4 text-right">15:32 Uhr</div>
 										</div>
 									</div></li>
 								<li class="accordion-navigation"><a href="#panel3a"
-									role="tab">16:30<span class="icon-accordion right"></span></a>
+									role="tab">16:30 Uhr<span class="icon-accordion right"></span></a>
 									<div id="panel3a" class="content" role="tabpanel">
 										<div class="row">
-											<div class="columns small-9">Quierschied Post</div>
-											<div class="columns small-3 text-right">16:30</div>
+											<div class="columns small-8">Quierschied Post</div>
+											<div class="columns small-4 text-right">16:30 Uhr</div>
 										</div>
 										<div class="row">
-											<div class="columns small-9">Quierschied alter Markt</div>
-											<div class="columns small-3 text-right">16:32</div>
+											<div class="columns small-8">Quierschied alter Markt</div>
+											<div class="columns small-4 text-right">16:32 Uhr</div>
 										</div>
 									</div></li>
 							</ul>
@@ -244,8 +244,7 @@
 
 	<script type="text/javascript">
 		$(document).foundation({
-			accordion : {},
-			magellan : {}
+			accordion : {}
 		});
 	</script>
 </body>
