@@ -23,6 +23,12 @@
 <script src="resources/js/angular/angular.js" type="text/javascript"></script>
 
 <script src="resources/js/app.js" type="text/javascript"></script>
+
+<!--  services -->
+<script src="resources/js/services/routeservice.js"
+	type="text/javascript"></script>
+
+<!--  controller -->
 <script src="resources/js/controller/busroutes.js"
 	type="text/javascript"></script>
 </head>
@@ -73,38 +79,39 @@
 
 					<div class="row">
 						<div class="columns large-4">
-
 							<label for="routeSelection">Route:</label> <select
-								id="routeSelection" data-ng-model="selected.route">
-								<option value="qsb">Quierschied >> Saarbrücken</option>
-								<option value="sbq">Saarbrücken >> Quierschied</option>
+								id="routeSelection" ng-model="selected.route"
+								ng-options="route as route.name for route in routes">
 							</select>
-
 						</div>
 
 						<div class="columns large-4">
-
-							<label for="busStopSelection">Haltestation:</label> <select
-								data-ng-disabled="!selected.route" id="busStopSelection"
-								data-ng-model="selected.busStop">
-								<option value="qp">Quierschied Post</option>
-								<option value="qam">Quierschied alter Markt</option>
+							<label for="stationSelection">Haltestation:</label> <select
+								id="stationSelection" data-ng-disabled="!selected.route"
+								ng-model="selected.station">
+								<optgroup
+									ng-repeat="route in routes | filter:{id:selected.route.id}"
+									label="Haltestellen">
+									<option ng-repeat="station in route.stations"
+										value="{{station}}">{{station.name}}</option>
+								</optgroup>
 							</select>
-
 						</div>
 
 						<div class="columns large-4">
 
 							<label for="daySelection">Wochentag:</label> <select
-								data-ng-disabled="!selected.route || !selected.busStop"
+								data-ng-disabled="!selected.route || !selected.station"
 								id="daySelection" data-ng-model="selected.day">
-								<option value="mo">Montag</option>
-								<option value="di">Dienstag</option>
-								<option value="mi">Mittwoch</option>
-								<option value="do">Donnerstag</option>
-								<option value="fr">Freitag</option>
-								<option value="sa">Samstag</option>
-								<option value="so">Sonntag</option>
+								<optgroup label="Wochentag">
+									<option value="mo">Montag</option>
+									<option value="di">Dienstag</option>
+									<option value="mi">Mittwoch</option>
+									<option value="do">Donnerstag</option>
+									<option value="fr">Freitag</option>
+									<option value="sa">Samstag</option>
+									<option value="so">Sonntag</option>
+								</optgroup>
 							</select>
 
 						</div>
@@ -114,13 +121,13 @@
 
 							<h3>Fahrzeiten:</h3>
 							<span
-								data-ng-show="selected.route && selected.busStop && selected.day">3
-								Fahrten</span> <label
-								for="{{!selected.route ? 'routeSelection' : !selected.busStop ? 'busStopSelection' : 'daySelection' }}"
-								data-ng-show="!selected.route || !selected.busStop || !selected.day">Bitte
+								data-ng-show="selected.route && selected.station && selected.day">
+								3 Fahrten</span> <label
+								for="{{!selected.route ? 'routeSelection' : !selected.station ? 'stationSelection' : 'daySelection' }}"
+								data-ng-show="!selected.route || !selected.station || !selected.day">Bitte
 								wählen Sie zunächst ihre Routeninformationen aus.</label>
 							<ul class="accordion trip-list" data-accordion role="tablist"
-								data-ng-show="selected.route && selected.busStop && selected.day">
+								data-ng-show="selected.route && selected.station && selected.day">
 								<li class="accordion-navigation"><a href="#panel1a"
 									role="tab">14:30 Uhr<span class="icon-accordion right"></span></a>
 									<div id="panel1a" class="content" role="tabpanel">

@@ -1,10 +1,15 @@
-app.controller('BusRoutesCtl', ['$scope', function ($scope) {
-  $scope.routes = [
-    {'name': 'Nexus S',
-     'snippet': 'Fast just got faster with Nexus S.'},
-    {'name': 'Motorola XOOM™ with Wi-Fi',
-     'snippet': 'The Next, Next Generation tablet.'},
-    {'name': 'MOTOROLA XOOM™',
-     'snippet': 'The Next, Next Generation tablet.'}
-  ];
-}]);
+app.controller('BusRoutesCtl', [ '$scope', 'routeService',
+		function($scope, routeService) {
+			$scope.routes = {};
+			$scope.selected = {};
+
+			var onRoutesLoaded = function(routes) {
+				$scope.routes = routes;
+			}
+
+			function init() {
+				routeService.fetchRoutes(onRoutesLoaded);
+			}
+
+			init();
+		} ]);
