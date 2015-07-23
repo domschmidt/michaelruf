@@ -65,8 +65,6 @@
 
 	<!-- News -->
 
-
-
 	<!-- Fahrpläne -->
 
 	<div class="row margin-bottom-36" id="routeplan">
@@ -88,30 +86,22 @@
 						<div class="columns large-4">
 							<label for="stationSelection">Haltestation:</label> <select
 								id="stationSelection" data-ng-disabled="!selected.route"
-								ng-model="selected.station">
-								<optgroup
-									ng-repeat="route in routes | filter:{id:selected.route.id}"
-									label="Haltestellen">
-									<option ng-repeat="station in route.stations"
-										value="{{station}}">{{station.name}}</option>
-								</optgroup>
+								ng-model="selected.station"
+								ng-options="station.name for station in getAvailableStations(selected)">
 							</select>
 						</div>
 
 						<div class="columns large-4">
 
 							<label for="daySelection">Wochentag:</label> <select
-								data-ng-disabled="!selected.route || !selected.station"
 								id="daySelection" data-ng-model="selected.day">
-								<optgroup label="Wochentag">
-									<option value="mo">Montag</option>
-									<option value="di">Dienstag</option>
-									<option value="mi">Mittwoch</option>
-									<option value="do">Donnerstag</option>
-									<option value="fr">Freitag</option>
-									<option value="sa">Samstag</option>
-									<option value="so">Sonntag</option>
-								</optgroup>
+								<option value="mo">Montag</option>
+								<option value="di">Dienstag</option>
+								<option value="mi">Mittwoch</option>
+								<option value="do">Donnerstag</option>
+								<option value="fr">Freitag</option>
+								<option value="sa">Samstag</option>
+								<option value="so">Sonntag</option>
 							</select>
 
 						</div>
@@ -122,50 +112,29 @@
 							<h3>Fahrzeiten:</h3>
 							<span
 								data-ng-show="selected.route && selected.station && selected.day">
-								3 Fahrten</span> <label
+								{{ getAvailableTrips(selected).length }} Fahrten für {{
+								selected.station.name }}</span> <label
 								for="{{!selected.route ? 'routeSelection' : !selected.station ? 'stationSelection' : 'daySelection' }}"
 								data-ng-show="!selected.route || !selected.station || !selected.day">Bitte
 								wählen Sie zunächst ihre Routeninformationen aus.</label>
 							<ul class="accordion trip-list" data-accordion role="tablist"
 								data-ng-show="selected.route && selected.station && selected.day">
-								<li class="accordion-navigation"><a href="#panel1a"
-									role="tab">14:30 Uhr<span class="icon-accordion right"></span></a>
-									<div id="panel1a" class="content" role="tabpanel">
-										<div class="row">
-											<div class="columns small-8">Quierschied Post</div>
-											<div class="columns small-4 text-right">14:30 Uhr</div>
-										</div>
-										<div class="row">
-											<div class="columns small-8">Quierschied alter Markt</div>
-											<div class="columns small-4 text-right">14:32 Uhr</div>
-										</div>
-									</div></li>
-								<li class="accordion-navigation"><a href="#panel2a"
-									role="tab">15:30 Uhr<span class="icon-accordion right"></span></a>
-									<div id="panel2a" class="content" role="tabpanel">
-										<div class="row">
-											<div class="columns small-8">Quierschied Post</div>
-											<div class="columns small-3 text-right">15:30 Uhr</div>
-										</div>
-										<div class="row">
-											<div class="columns small-8">Quierschied alter Markt</div>
-											<div class="columns small-4 text-right">15:32 Uhr</div>
-										</div>
-									</div></li>
-								<li class="accordion-navigation"><a href="#panel3a"
-									role="tab">16:30 Uhr<span class="icon-accordion right"></span></a>
-									<div id="panel3a" class="content" role="tabpanel">
-										<div class="row">
-											<div class="columns small-8">Quierschied Post</div>
-											<div class="columns small-4 text-right">16:30 Uhr</div>
-										</div>
-										<div class="row">
-											<div class="columns small-8">Quierschied alter Markt</div>
-											<div class="columns small-4 text-right">16:32 Uhr</div>
+
+								<li class="accordion-navigation"
+									ng-repeat="trip in getAvailableTrips(selected)"><a
+									href="#trip-{{ $index }}" role="tab"> {{
+										getTripStartTimeForStation(trip, selected) }}<span
+										class="icon-accordion right"></span>
+								</a>
+									<div id="trip-{{ $index }}" class="content" role="tabpanel">
+										<div class="row"
+											ng-repeat="station in selected.route.stations">
+											<div class="columns small-8">{{ station.name }}</div>
+											<div class="columns small-4 text-right">{{
+												trip.times[$index] }}</div>
 										</div>
 									</div></li>
 							</ul>
-
 						</div>
 					</div>
 				</div>
